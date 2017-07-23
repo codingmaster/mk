@@ -1,5 +1,6 @@
 
 //REVIEW: default comment
+
 /**
  * Write a description of class RBTree here.
  * 
@@ -163,8 +164,12 @@ public class RBTree
         }
     }
 
+    //REVIEW: Why do you need RBTree if it is always "this"
     private void insert(RBTree T,Node z)
     {
+        System.out.println("Inserting " + z);
+        System.out.println("into tree " + T.toString());
+        
         Node empty=new Node();
         Node y=empty;
         Node x=T._root;
@@ -188,6 +193,8 @@ public class RBTree
         String s= new String("red");
         z.setColor(s);
         insertFixup(T,z);
+    
+        System.out.println("result tree " + T.toString() + "\n");
     }
 
     private void insertFixup(RBTree T,Node z)
@@ -196,6 +203,7 @@ public class RBTree
         String r= new String("red");
         while (z.getP().getColor().equals(r))
         {
+            //REVIEW: you have an error in this logic. There is no else condition inside of this if
             if (z.getP().equals(z.getP().getP().getLeft()))
             {
                 Node y;
@@ -214,6 +222,9 @@ public class RBTree
                     z.getP().setColor(b);
                     z.getP().getP().setColor(r);
                     rightRotate(T,z.getP().getP());
+                }
+                else{
+                    //REVIEW: Write else condition here !!!
                 }
             }
             else
@@ -234,6 +245,9 @@ public class RBTree
                     z.getP().setColor(b);
                     z.getP().getP().setColor(r);
                     leftRotate(T,z.getP().getP());
+                }
+                else{
+                    //REVIEW: Write else condition here !!!
                 }
             }
         }
@@ -351,5 +365,11 @@ public class RBTree
             System.out.print(x.getKey() + ", ");
             printkMin(x.getRight());
         }
+    }
+    
+    @Override
+    public String toString()
+    {
+        return _root.toString();
     }
 }

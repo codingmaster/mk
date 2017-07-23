@@ -84,4 +84,19 @@ public class Node
     {
         _color = c;
     }
+	
+	@Override
+	public String toString()
+	{
+		String result = "";
+		String node = "(node: " + _key + ", " + _color + ")";
+		result += node;
+		if(_left != null && _left.getKey() != -1){
+			result = "<left: " + _left + "> \t" + result;
+		}
+		if(_right != null && _right.getKey() != -1){
+			result = result + " \t{right: " + _right + "}\n";
+		}
+		return result;
+	}
 }
