@@ -10,6 +10,7 @@ public class Node
     // instance variables - replace the example below with your own
     private Node _left;
     private Node _right;
+    //REVIEW: What is _p? Is this a parent? Why don't call it parent?
     private Node _p;
     private int _key;
     private String _color;
@@ -19,6 +20,7 @@ public class Node
      */
     public Node(int x)
     {
+        //REVIEW: Why is this node nil? Is this a
         Node nil=new Node(); 
         _left=nil;
         _right=nil;

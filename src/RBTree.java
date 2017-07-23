@@ -1,4 +1,5 @@
 
+//REVIEW: default comment
 /**
  * Write a description of class RBTree here.
  * 
@@ -21,6 +22,7 @@ public class RBTree
         Node empty=new Node();
         _root=empty;
         _max=empty;
+        // REVIEW: Why is k = x ?
         _k=x;
         _numOfNodes=0;
     }
@@ -44,12 +46,15 @@ public class RBTree
     {
         return _numOfNodes;
     }
-    
+    //REVIEW: Why is k = l ?
     public void setK(int l) 
     {
         _k = l;
     }
-
+    
+    //REVIEW: Default comment
+    //REVIEW: What do these parameters mean? What is y? Is this a search key?
+    //REVIEW: Why search function is never used? Do you need it?
     /**
      * An example of a method - replace this comment with your own
      * 
